@@ -1,4 +1,4 @@
-<p align="center"><a href="/public/images/logo.png" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="images/logo.png" width="400" alt="Laravel Logo"></a></p>
 
 # AGRO S.M.S 
 ### 'cosechando exito, programando innovacion'
