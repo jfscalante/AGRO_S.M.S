@@ -1,5 +1,10 @@
 @extends('layouts.welcome_layout')
 
+<!-- Estilos CSS y Scripts JS -->
+<style>
+
+</style>
+
 <!-- Section de inicio -->
 <section class="inicio-section">
     <div class="text-center">
@@ -10,6 +15,7 @@
 </section>
 
 @section('content')
+
 <div class="container">
     <h1>Bienvenido</h1>
 
@@ -44,7 +50,7 @@
                 <tbody>
                     @foreach($plants as $plant)
                         <tr>
-                            <td><a href="#" class="plant-link" data-toggle="modal" data-target="#plantModal" data-plant="{{ json_encode($plant) }}">{{ $plant->name }}</a></td>
+                            <td><a href="#" class="plant-link" data-toggle="modal" data-target="#plantModal" data-plant="{{ htmlspecialchars(json_encode($plant), ENT_QUOTES, 'UTF-8') }}">{{ $plant->name }}</a></td>
                             <td>{{ $plant->disease_name }}</td>
                             <td>{{ $plant->description }}</td>
                             <td>{{ $plant->chemical_treatment }}</td>
@@ -85,37 +91,43 @@
         </div>
     </div>
 </div>
-@endsection
 
-@section('scripts')
-    <script>
-        $(document).ready(function() {
-            // Inicializar DataTables
-            $('#plants-table').DataTable({
-                "language": {
-                    "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json"
-                },
-                "order": [[ 0, "desc" ]], // Ordenar por la primera columna (ID) de forma descendente
-                "pagingType": "simple_numbers", // Tipo de paginación
-                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]], // Opciones de cantidad de registros por página
-                "responsive": true // Tabla responsiva
-            });
-
-            // Manejar el clic en el enlace de la planta
-            $('.plant-link').on('click', function() {
-                var plant = $(this).data('plant');
-                var plantDetails = `
-                    <h3>${plant.name}</h3>
-                    <p><strong>Nombre de la Enfermedad:</strong> ${plant.disease_name}</p>
-                    <p><strong>Descripción:</strong> ${plant.description}</p>
-                    <p><strong>Tratamiento Químico:</strong> ${plant.chemical_treatment}</p>
-                    <p><strong>Cantidad de Tratamiento:</strong> ${plant.treatment_quantity}</p>
-                    <p><strong>Medidas Preventivas:</strong> ${plant.preventive_measures}</p>
-                    ${plant.image ? `<img src="/images/${plant.image}" alt="${plant.name}" class="img-fluid">` : 'Sin imagen'}
-                `;
-                $('#plant-details').html(plantDetails);
-            });
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Inicializar DataTables
+        $('#plants-table').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json"
+            },
+            "order": [[ 0, "desc" ]], // Ordenar por la primera columna (ID) de forma descendente
+            "pagingType": "simple_numbers", // Tipo de paginación
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]], // Opciones de cantidad de registros por página
+            "responsive": true // Tabla responsiva
         });
-    </script>
-@endsection
 
+        // Manejar el clic en el enlace de la planta
+        $('.plant-link').on('click', function() {
+            var plant = $(this).data('plant');
+            var plantDetails = `
+                <h3>${plant.name}</h3>
+                <p><strong>Nombre de la Enfermedad:</strong> ${plant.disease_name}</p>
+                <p><strong>Descripción:</strong> ${plant.description}</p>
+                <p><strong>Tratamiento Químico:</strong> ${plant.chemical_treatment}</p>
+                <p><strong>Cantidad de Tratamiento:</strong> ${plant.treatment_quantity}</p>
+                <p><strong>Medidas Preventivas:</strong> ${plant.preventive_measures}</p>
+                ${plant.image ? `<img src="/images/${plant.image}" alt="${plant.name}" class="img-fluid">` : 'Sin imagen'}
+            `;
+            $('#plant-details').html(plantDetails);
+        });
+
+        // Toggle del menú de navegación para móviles
+        $('.menu-toggle').on('click', function() {
+            $('.menu').toggleClass('active');
+        });
+    });
+</script>
+@endsection
