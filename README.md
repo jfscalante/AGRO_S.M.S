@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/images/logo.png" alt="Logo">
+  <img src="./public/images/readme.png" alt="Logo">
 </p>
 
 # AGRO S.M.S
