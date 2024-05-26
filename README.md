@@ -1,68 +1,79 @@
-<p align="center"><a href="images/logo.png" width="400" alt="Laravel Logo"></a></p>
-
-# AGRO S.M.S 
-### 'cosechando exito, programando innovacion'
-<!-- <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<p align="center">
+  <img src="./public/images/logo.png" alt="Logo">
 </p>
 
-## About Laravel
+# SSETP - Sistema de Seguimiento de Etapa Productiva
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+SSETP es un aplicativo web desarrollado en Laravel con Moonshine, TailwindCSS, Alpine.js y MySQL. Este sistema está diseñado para gestionar el seguimiento de los aprendices en el Centro de Formación, simplificando y automatizando el proceso de seguimiento. Proporciona a los responsables de la formación acceso rápido y sencillo a la información relevante sobre los aprendices.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Descripción del Proyecto
 
-## Learning Laravel
+El proyecto tiene como objetivo facilitar el monitoreo de los aprendices mediante el desarrollo de un sistema web que permite la gestión y acceso a la información de manera eficiente. Utilizando una base de datos robusta, SSETP asegura que todos los datos relevantes estén disponibles para los instructores y responsables de la formación.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tecnologías Utilizadas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Laravel**: Framework PHP para el desarrollo de aplicaciones web.
+- **Moonshine**: Herramienta para el desarrollo de interfaces administrativas en Laravel.
+- **TailwindCSS**: Framework CSS para un diseño rápido y personalizable.
+- **Alpine.js**: Framework JavaScript ligero para la interacción con el DOM.
+- **MySQL**: Sistema de gestión de bases de datos relacional.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalación
 
-## Laravel Sponsors
+Sigue estos pasos para configurar el proyecto en tu entorno local:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/ssetp.git
+   cd ssetp
+   ```
 
-### Premium Partners
+2. Instala las dependencias de PHP y JavaScript:
+   ```bash
+   composer install
+   npm install
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+3. Configura el archivo `.env`:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+4. Configura la base de datos en el archivo `.env`:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=ssetp
+   DB_USERNAME=tu_usuario
+   DB_PASSWORD=tu_contraseña
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Ejecuta las migraciones y los seeders:
+   ```bash
+   php artisan migrate --seed
+   ```
 
-## Code of Conduct
+6. Inicia el servidor de desarrollo:
+   ```bash
+   php artisan serve
+   npm run dev
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Uso
 
-## Security Vulnerabilities
+Accede a la aplicación en tu navegador a través de `http://localhost:8000/admin`. Desde allí, podrás gestionar y seguir el progreso de los aprendices en el Centro de Formación.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Contribuidores
 
-## License
+El proyecto fue desarrollado por los aprendices **Mayra Yurani Palma Rojas** y **Andrés Felipe Ramírez Collazos**, bajo la supervisión del instructor **Héctor D. Toledo García**.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+¡Gracias por utilizar SSETP! Si tienes alguna pregunta o sugerencia, no dudes en contactarnos.
