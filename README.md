@@ -62,7 +62,7 @@ Sigue estos pasos para configurar el proyecto en tu entorno local:
 
 ## Uso
 
-Accede a la aplicación en tu navegador a través de `http://localhost:8000/admin`. Desde allí, podrás gestionar y seguir el progreso de los aprendices en el Centro de Formación.
+Accede a la aplicación en tu navegador a través de `http://localhost:8000/admin`. Desde allí, podrás gestionar toda la informacion del aplicativo dandote una amplia rama de opciones para editar, eliminar, agregar y actualizar toda la informacion existente.
 
 ## Contribuidores
 
