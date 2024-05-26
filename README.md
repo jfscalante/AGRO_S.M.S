@@ -24,7 +24,7 @@ Sigue estos pasos para configurar el proyecto en tu entorno local:
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/jfscalante/AGRO_S.M.S.git
-   cd ssetp
+   cd AGRO_S.M.S
    ```
 
 2. Instala las dependencias de PHP y JavaScript:
@@ -66,7 +66,7 @@ Accede a la aplicación en tu navegador a través de `http://localhost:8000/admi
 
 ## Contribuidores
 
-El proyecto fue desarrollado por los aprendices **Miguel Angel Suarez Fajardo** , **Jimmy Fabian Scalante** y **Duvan Alfonso Monroy Bermudez**, bajo la supervisión del instructor **Héctor D. Toledo García**.
+El proyecto fue desarrollado por los aprendices **Miguel Angel Suarez Fajardo** , **Jimmy Fabian Scalante Claros** y **Duvan Alfonso Monroy Bermudez**, bajo la supervisión del instructor **Héctor D. Toledo García**.
 
 ## Licencia
 
