@@ -9,14 +9,12 @@
 
 ## Descripción del Proyecto
 
-esta aplicación se basa en brindar información precisa a los agricultores sobre sus cultivos,.
+esta aplicación se basa en brindar información precisa a los agricultores sobre sus cultivos, prevención de plagas y enfermedades, en caso de que el cultivo ya este afectado la app ofrece soluciones con información sobre los mejores métodos de control, incluyendo pesticidas..
 
 ## Tecnologías Utilizadas
 
 - **Laravel**: Framework PHP para el desarrollo de aplicaciones web.
-- **Moonshine**: Herramienta para el desarrollo de interfaces administrativas en Laravel.
-- **TailwindCSS**: Framework CSS para un diseño rápido y personalizable.
-- **Alpine.js**: Framework JavaScript ligero para la interacción con el DOM.
+- **BootstrapCSS**: Framework CSS para un diseño rápido y personalizable.
 - **MySQL**: Sistema de gestión de bases de datos relacional.
 
 ## Instalación
@@ -25,7 +23,7 @@ Sigue estos pasos para configurar el proyecto en tu entorno local:
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/ssetp.git
+   git clone https://github.com/jfscalante/AGRO_S.M.S.git
    cd ssetp
    ```
 
@@ -46,7 +44,7 @@ Sigue estos pasos para configurar el proyecto en tu entorno local:
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=ssetp
+   DB_DATABASE=agrosms
    DB_USERNAME=tu_usuario
    DB_PASSWORD=tu_contraseña
    ```
@@ -68,7 +66,7 @@ Accede a la aplicación en tu navegador a través de `http://localhost:8000/admi
 
 ## Contribuidores
 
-El proyecto fue desarrollado por los aprendices **Mayra Yurani Palma Rojas** y **Andrés Felipe Ramírez Collazos**, bajo la supervisión del instructor **Héctor D. Toledo García**.
+El proyecto fue desarrollado por los aprendices **Miguel Angel Suarez Fajardo** , **Jimmy Fabian Scalante** y **Duvan Alfonso Monroy Bermudez**, bajo la supervisión del instructor **Héctor D. Toledo García**.
 
 ## Licencia
 
@@ -76,4 +74,4 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENS
 
 ---
 
-¡Gracias por utilizar SSETP! Si tienes alguna pregunta o sugerencia, no dudes en contactarnos.
+¡Gracias por utilizar AGRO S.M.S! Si tienes alguna pregunta o sugerencia, no dudes en contactarnos.
