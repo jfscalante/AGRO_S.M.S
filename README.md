@@ -2,14 +2,14 @@
   <img src="./public/images/logo.png" alt="Logo">
 </p>
 
-# SSETP - Sistema de Seguimiento de Etapa Productiva
+# AGRO S.M.S
 
 
-SSETP es un aplicativo web desarrollado en Laravel con Moonshine, TailwindCSS, Alpine.js y MySQL. Este sistema está diseñado para gestionar el seguimiento de los aprendices en el Centro de Formación, simplificando y automatizando el proceso de seguimiento. Proporciona a los responsables de la formación acceso rápido y sencillo a la información relevante sobre los aprendices.
+ AGRO S.M.S es un aplicativo web desarrollado en Laravel, bootstrap, ccs nativo y MySQL. Este sistema está diseñado para dar soluciones efectivas a enfermedades por las que este pasando los cultivos, dando tratamiento efectivo para combatir este problema, simplificando y automatizando el proceso de informacion a los agricultores. Proporciona informacion detallada con acceso rápido y sencillo a la información relevante de los principales cultivos de la region.
 
 ## Descripción del Proyecto
 
-El proyecto tiene como objetivo facilitar el monitoreo de los aprendices mediante el desarrollo de un sistema web que permite la gestión y acceso a la información de manera eficiente. Utilizando una base de datos robusta, SSETP asegura que todos los datos relevantes estén disponibles para los instructores y responsables de la formación.
+esta aplicación se basa en brindar información precisa a los agricultores sobre sus cultivos,.
 
 ## Tecnologías Utilizadas
 
