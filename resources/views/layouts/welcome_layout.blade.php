@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AGRO SMS</title>
-    
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -12,11 +12,12 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
-        <!-- Custom CSS -->
-        <style>
+
+    <!-- Custom CSS -->
+    <style>
         /* Importación de fuentes */
         @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
         /* Estilos generales */
         * {
@@ -24,6 +25,18 @@
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 0;
+        }
+
+        /* Colores predeterminados */
+        :root {
+            --bg-color: #1c1c1c;
+            --font-color: #fff;
+            --secondary-bg-color: #00ff37;
+        }
+
+        /* Comportamiento del scroll */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Barra de navegación */
@@ -54,20 +67,7 @@
         }
 
         #menuBarra ul li a:hover {
-            color: #f0a500;
-        }
-
-        /* Colores predeterminados */
-        :root {
-            --bg-color: #1c1c1c;
-            --font-color: #fff;
-            --secondary-bg-color: #00ff37;
-            --font: "Poppins";
-        }
-
-        /* Comportamiento del scroll */
-        html {
-            scroll-behavior: smooth;
+            color: #00ff37;
         }
 
         /* Sección de inicio */
@@ -80,18 +80,40 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-out 0.3s;
+        }
+
+        .inicio-section.loaded {
+            opacity: 1;
         }
 
         /* Logo */
         .logo {
             max-width: 200px;
             margin-bottom: 20px;
+            transition: 0.5s ease;
+        }
+
+        .titulo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700; /* Grosor de la fuente */
+            font-size: 48px;  /* Tamaño del texto principal */
+            color: #ffffff; /* Color del texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+            margin: 0;
         }
 
         /* Slogan */
         .slogan {
-            font-size: 18px;
-            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400; /* Grosor de la fuente */
+            font-size: 24px;  /* Tamaño del texto secundario */
+            color: #ffffff; /* Color del texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+            margin: 0;
+            margin-top: 10px; /* Espacio entre el título y el slogan */
         }
 
         /* Estilos para las tarjetas (cards) */
@@ -172,7 +194,7 @@
             padding: 0;
             box-sizing: border-box;
             color: #fff;
-            background: url('image.png') no-repeat center center fixed;
+            background: url('fondo.jpg') no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -276,9 +298,58 @@
                 margin: 10px 0;
             }
         }
+
+        /* Estilos del loader */
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            transition: transform 0.5s ease, opacity 0.5s ease; /* Transición de ocultar */
+        }
+
+        .loader-container.hidden {
+            transform: translateY(-100%); /* Transición hacia arriba */
+            opacity: 0;
+        }
+
+        .loader {
+            text-align: center;
+            color: #fff;
+            font-family: 'Righteous', cursive;
+        }
+
+        .loader img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .loader p {
+            animation: blink 1s infinite; /* Animación de parpadeo */
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <div class="loader">
+            <img src="images/logo.png" alt="Logo">
+            <p>Cargando...</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg" id="menuBarra">
         <a class="navbar-brand" href="#">
             <img src="images/logo.png" width="65" height="60" class="d-inline-block align-top" alt="Logo"> 
@@ -316,5 +387,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+
+    <!-- Custom JS for loader -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loader = document.getElementById("loader");
+            const content = document.querySelector(".inicio-section");
+
+            function hideLoader() {
+                loader.classList.add("hidden");
+                content.classList.add("loaded");
+            }
+
+            setTimeout(hideLoader, 200); // Esconde el loader después de 2 segundos
+        });
+    </script>
 </body>
 </html>

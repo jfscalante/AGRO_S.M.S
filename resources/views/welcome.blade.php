@@ -1,15 +1,10 @@
 @extends('layouts.welcome_layout')
 
-<!-- Estilos CSS y Scripts JS -->
-<style>
-
-</style>
-
 <!-- Section de inicio -->
 <section class="inicio-section">
     <div class="text-center">
         <img src="images/logo.png" alt="Logo Grande" class="logo">
-        <h1 style="color: white;">AGRO S.M.S</h1>
+        <h1 style="color: white; " class="titulo">AGRO S.M.S</h1>
         <p class="slogan">"Programando éxito, cosechando innovación"</p>
     </div>
 </section>
