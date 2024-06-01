@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlantController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ConfigController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/buscar', [SearchController::class, 'search'])->name('search');
@@ -16,6 +17,14 @@ Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Ruta para la página de contáctanos
+Route::get('/contactanos', function () {
+    return view('contactanos');
+});
+
+// Ruta para manejar el envío del formulario de contacto
+Route::post('/enviar-contacto', [ContactController::class, 'enviarContacto']);
 
 // Ruta protegida para la página principal
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
@@ -47,8 +56,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-
-
 
 // Autenticación de Laravel
 Auth::routes();

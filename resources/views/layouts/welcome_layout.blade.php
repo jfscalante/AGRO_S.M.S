@@ -369,7 +369,7 @@
                     <a class="nav-link" href="#">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contactanos</a>
+                    <a class="nav-link" href="{{ url('/contactanos') }}">Contactanos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Ayudanos a mejorar <i class="fa-regular fa-envelope"></i></a>
