@@ -366,7 +366,7 @@
                     <a class="nav-link" href="{{url('/biblioteca')}}">Biblioteca</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Nosotros</a>
+                    <a class="nav-link" href="{{ url('/nosotros') }}">Nosotros</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/contactanos') }}">Contactanos</a>

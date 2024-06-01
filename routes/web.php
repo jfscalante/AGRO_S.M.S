@@ -8,8 +8,6 @@ use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 
-
-
 Route::get('/biblioteca', [PlantController::class, 'search'])->name('biblioteca');
 Route::get('/buscar', [SearchController::class, 'search'])->name('search');
 // Ruta para el buscador
@@ -32,6 +30,11 @@ Route::get('/contactanos', function () {
 
 // Ruta para manejar el envío del formulario de contacto
 Route::post('/enviar-contacto', [ContactController::class, 'enviarContacto']);
+
+// Ruta para la página "Nosotros"
+Route::get('/nosotros', function () {
+    return view('nosotros');
+})->name('nosotros');
 
 // Ruta protegida para la página principal
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
