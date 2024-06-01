@@ -19,6 +19,6 @@ class SearchController extends Controller
             ->orWhere('preventive_measures', 'LIKE', "%{$query}%")
             ->get();
 
-        return view('welcome', compact('plants', 'query'));
+        return view('biblioteca', compact('plants', 'query'));
     }
 }

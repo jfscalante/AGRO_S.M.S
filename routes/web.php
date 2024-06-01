@@ -7,6 +7,9 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ConfigController;
 use Illuminate\Support\Facades\Auth;
 
+
+
+Route::get('/biblioteca', [PlantController::class, 'search'])->name('biblioteca');
 Route::get('/buscar', [SearchController::class, 'search'])->name('search');
 // Ruta para el buscador
 Route::get('/search', [PlantController::class, 'search'])->name('plants.search');
@@ -15,6 +18,10 @@ Route::get('/search', [SearchController::class, 'search'])->name('search');
 // Ruta de bienvenida
 Route::get('/', function () {
     return view('welcome');
+});
+// Ruta de biblioteca
+Route::get('/biblioteca', function () {
+    return view('biblioteca');
 });
 
 // Ruta protegida para la página principal
