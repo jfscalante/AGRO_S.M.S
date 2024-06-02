@@ -1,37 +1,19 @@
 @extends('layouts.welcome_layout')
 
+<div class="content">
+    <img src="images/banner_biblioteca.png" alt="">
+</div>
 @section('content')
 <style>
     /* Imagen de banner */
-    .container img {
+    .content img {
         width: 100%;
         height: auto;
         margin-bottom: 20px;
     }
 
-    /* Estilos de la barra de navegación */
-    #menuBarra {
-        background-color: ; /* Color verde */
-    }
-
-    #menuBarra .navbar-nav .nav-link {
-        color: #fff; /* Texto blanco */
-        font-weight: bold;
-    }
-
-    #menuBarra .navbar-nav .nav-link:hover {
-        color: #ddd; /* Texto gris claro al pasar el ratón */
-    }
-
-    /* Estilo del enlace activo */
-    #menuBarra .navbar-nav .active .nav-link {
-        color: #000; /* Texto negro */
-    }
-
 </style>
-<div class="container">
-    <img src="images/banner.jpg" alt="">
-</div>
+
 <div class="container">
     <h1>Bienvenido</h1>
 
