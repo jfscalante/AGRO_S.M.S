@@ -1,66 +1,171 @@
 @extends('layouts.app')
 
+<style>
+/* Tipografía */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Contenedor principal */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0;
+    background-image: url('/images/perla.png'); /* Asegúrate de que la imagen exista */
+    background-size: cover;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    padding: 15px;
+}
+
+.card-header h3 {
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* Formularios */
+.form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control, .custom-file-input {
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .custom-file-input:focus {
+    border-color: #5cb85c;
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+}
+
+.custom-file-label {
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Fieldsets */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #5cb85c;
+}
+
+/* Botones */
+.btn-lg {
+    padding: 10px 20px;
+    font-size: 1.2em;
+}
+
+.btn-success, .btn-secondary {
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-success {
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
+
+.btn-success:hover, .btn-secondary:hover {
+    background-color: #4cae4c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Errores */
+.invalid-feedback {
+    font-size: 0.9em;
+    color: #d9534f;
+}
+
+/* Nombre del archivo seleccionado */
+.custom-file-label.selected::after {
+    content: "Archivo seleccionado";
+}
+</style>
+
 @section('content')
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow-lg border-0 rounded-lg">
-                <div class="card-header bg-primary text-white text-center">
-                    <h3 class="my-3">Agregar Nueva Planta</h3>
+                <div class="card-header text-white text-center">
+                    <h3 class="my-3">{{ __('Agregar Nueva Planta') }}</h3>
                 </div>
                 <div class="card-body">
                     <form id="plant-form" action="{{ route('plants.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <fieldset class="border p-3 mb-4">
-                            <legend class="w-auto px-2 text-primary">Información de la Planta</legend>
+                            <legend class="w-auto px-2">{{ __('Información de la Planta') }}</legend>
                             <div class="mb-3">
-                                <label for="name" class="form-label">Nombre:</label>
+                                <label for="name" class="form-label">{{ __('Nombre:') }}</label>
                                 <input type="text" name="name" id="name" class="form-control" placeholder="Nombre de la planta" required>
                             </div>
                             <div class="mb-3">
-                                <label for="disease_name" class="form-label">Nombre de la Enfermedad:</label>
+                                <label for="disease_name" class="form-label">{{ __('Nombre de la Enfermedad:') }}</label>
                                 <input type="text" name="disease_name" id="disease_name" class="form-control" placeholder="Nombre de la enfermedad" required>
                             </div>
                             <div class="mb-3">
-                                <label for="description" class="form-label">Descripción:</label>
+                                <label for="description" class="form-label">{{ __('Descripción:') }}</label>
                                 <textarea name="description" id="description" class="form-control" rows="3" placeholder="Descripción de la enfermedad" required></textarea>
                             </div>
                         </fieldset>
 
                         <fieldset class="border p-3 mb-4">
-                            <legend class="w-auto px-2 text-primary">Tratamiento</legend>
+                            <legend class="w-auto px-2">{{ __('Tratamiento') }}</legend>
                             <div class="mb-3">
-                                <label for="chemical_treatment" class="form-label">Tratamiento Químico:</label>
+                                <label for="chemical_treatment" class="form-label">{{ __('Tratamiento Químico:') }}</label>
                                 <input type="text" name="chemical_treatment" id="chemical_treatment" class="form-control" placeholder="Nombre del tratamiento químico">
                             </div>
                             <div class="mb-3">
-                                <label for="treatment_quantity" class="form-label">Cantidad de Tratamiento:</label>
+                                <label for="treatment_quantity" class="form-label">{{ __('Cantidad de Tratamiento:') }}</label>
                                 <input type="text" name="treatment_quantity" id="treatment_quantity" class="form-control" placeholder="Cantidad de tratamiento">
                                 <small class="form-text text-muted">Ejemplo: 20cm por bombada de 20lt</small>
                             </div>
                             <div class="mb-3">
-                                <label for="preventive_measures" class="form-label">Medidas Preventivas:</label>
+                                <label for="preventive_measures" class="form-label">{{ __('Medidas Preventivas:') }}</label>
                                 <textarea name="preventive_measures" id="preventive_measures" class="form-control" rows="3" placeholder="Medidas preventivas"></textarea>
                             </div>
                         </fieldset>
-                        
+
                         <fieldset class="border p-3 mb-4">
-                            <legend class="w-auto px-2 text-primary">Imagen</legend>
+                            <legend class="w-auto px-2">{{ __('Imagen') }}</legend>
                             <div class="mb-3">
-                                <label for="image" class="form-label">Imagen:</label>
+                                <label for="image" class="form-label">{{ __('Imagen:') }}</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="image">
-                                    <label class="custom-file-label" for="image">Seleccionar Archivo</label>
+                                    <label class="custom-file-label" for="image">{{ __('Seleccionar Archivo') }}</label>
                                 </div>
                             </div>
                         </fieldset>
 
                         <div class="form-group d-flex justify-content-end">
                             <button type="submit" class="btn btn-success btn-lg me-2">
-                                <i class="fas fa-save"></i> Guardar
+                                <i class="fas fa-save"></i> {{ __('Guardar') }}
                             </button>
                             <a href="{{ route('plants.index') }}" class="btn btn-secondary btn-lg">
-                                <i class="fas fa-times"></i> Cancelar
+                                <i class="fas fa-times"></i> {{ __('Cancelar') }}
                             </a>
                         </div>
                     </form>

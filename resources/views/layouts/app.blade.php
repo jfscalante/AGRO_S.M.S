@@ -32,6 +32,20 @@
         background-color: #343a40; /* Color de fondo de la barra lateral */
         color: #fff; /* Color de texto de la barra lateral */
     }
+    /* .backg-fond {
+        background-image:url(images/negro_piedra.png);
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: size;
+    } */
+    .name {
+    font-size: 20px;
+    font-weight: bold; /* Agrega grosor a la letra */
+    background-image: url(images/fondo.jp); /* Agrega una imagen de fondo */
+    background-clip: text; /* La imagen solo se mostrará en el área del texto */
+    -webkit-background-clip: text; /* Para navegadores webkit */
+    color: transparent; /* Hace que el color del texto sea transparente para que solo se vea la imagen */
+    }
     .sidebar a {
         color: #adb5bd; /* Color de los enlaces en la barra lateral */
         display: flex;
@@ -103,11 +117,11 @@
                 <span class="navbar-brand hamburger-menu" onclick="toggleSidebar()">
                     <i class="fas fa-bars"></i>
                 </span>
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand name" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <a class="navbar-brand-logo" href="{{ url('/') }}">
-                    <img src="" alt="Logo" height="30">
+                    <img src="images/logo.png" alt="Logo" height="30">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -182,7 +196,7 @@
                 </div>
             </nav>
 
-            <main class="main-content w-100">
+            <main class="main-content w-100 backg-fond">
                 <!-- Contenido principal -->
                 @yield('content')
             </main>

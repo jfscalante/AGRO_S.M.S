@@ -1,139 +1,156 @@
-<!-- resources/views/nosotros.blade.php -->
 @extends('layouts.welcome_layout')
 
 @section('content')
 <div class="container mt-5">
-    <h1>Nosotros</h1>
-    <p>Conoce más sobre nosotros y nuestra misión.</p>
-
-    <!-- Imagen con animaciones -->
-    <div class="image-container">
-        <img src="images/nosotros_image.jpg" alt="Nosotros" class="animated-image">
+    <!-- Sección de ¿A qué nos dedicamos? -->
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <h2 class="mb-3">¿A qué nos dedicamos?</h2>
+            <p>Somos unos estudiantes con ganas de dar soluciones a campesinos teniendo en cuenta las dificultades a la hora de buscar ayuda y no encontrar fácilmente soluciones.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="images/nosotros (5).png" alt="A qué nos dedicamos" class="img-fluid rounded">
+        </div>
     </div>
 
-    <p>Somos un equipo dedicado a...</p>
+    <!-- Sección de ¿Quiénes somos? -->
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <img src="images/nosotros (4).png" alt="¿Quiénes somos?" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+            <h2 class="mb-3">¿Quiénes somos?</h2>
+            <p>Somos unos estudiantes capaces de brindar soluciones desarrollando software para ayudar a todas esas personas a tener una mejor articulación a sus problemas.</p>
+        </div>
+    </div>
 
-    <!-- Tarjetas del equipo de desarrollo -->
-    <div class="team-section">
-        <div class="team-card">
-            <img src="images/scalante.png" alt="Miembro 1" class="team-image">
-            <h3>Fabian Scalante</h3>
-            <p>Desarrollador Full Stack</p>
-            <p>Experto en Laravel y Vue.js</p>
+    <!-- Sección de Misión, Visión y Objetivos -->
+    <div class="row text-center mb-5">
+        <div class="col-md-4">
+            <div class="card-nts">
+                <img src="images/nosotros (2).png" alt="Misión" class="card-img-top-nts">
+                <div class="card-body">
+                    <h4 class="card-title">Misión</h4>
+                    <p class="card-text">Generar ayuda a los agricultores para que sus cultivos se le facilite el mantenimiento de sus cultivos a alguna planta en general.</p>
+                </div>
+            </div>
         </div>
-        <div class="team-card">
-            <img src="images/fajardo.png" alt="Miembro 2" class="team-image">
-            <h3>Miguel Suarez</h3>
-            <p>Desarrolladora Frontend</p>
-            <p>Especialista en React y CSS</p>
+        <div class="col-md-4">
+            <div class="card-nts-m">
+                <img src="images/nosotros (1).png" alt="Visión" class="card-img-top-nts">
+                <div class="card-body">
+                    <h4 class="card-title">Visión</h4>
+                    <p class="card-text">Ser una web que genere ayuda a muchos pequeños del país o el mundo en general y poder brindar soluciones a los agricultores facilitando el mantenimiento de cultivos.</p>
+                </div>
+            </div>
         </div>
-        <div class="team-card">
-            <img src="images/monroy.png" alt="Miembro 3" class="team-image">
-            <h3>Duvan Monroy</h3>
-            <p>Desarrollador Backend</p>
-            <p>Experto en Node.js y MongoDB</p>
+        <div class="col-md-4">
+            <div class="card-nts">
+                <img src="images/nosotros (3).png" alt="Objetivo" class="card-img-top-nts">
+                <div class="card-body">
+                    <h4 class="card-title">Objetivo</h4>
+                    <p class="card-text">Llegar a todos los agricultores con necesidades en sus cultivos y poder dar esa gran ayuda que muchas veces los agricultores necesitan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección del equipo de desarrollo -->
+    <div class="row text-center mb-5">
+        <div class="col-12">
+            <h2 class="mb-4">Nuestro Equipo</h2>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="images/scalante.png" alt="Fabian Scalante" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Fabian Scalante</h4>
+                    <p class="card-text">Desarrollador Full Stack<br>Experto en Laravel y Vue.js</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-nts-m">
+                <img src="images/fajardo.png" alt="Miguel Suarez" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Miguel Suarez</h4>
+                    <p class="card-text">Desarrollador Full Stack<br>Experto en Laravel y Node.js</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="images/monroy.png" alt="Duvan Monroy" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Duvan Monroy</h4>
+                    <p class="card-text">Desarrollador Backend<br>Experto en Node.js y Mysql</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
     body {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.691)), url('images/fondo.jpg');
-        background-size: cover;
-        font-family: 'Arial', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
         color: #333;
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .container {
-        background: rgba(255, 255, 255, 0.9);
         padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        max-width: 800px;
-        width: 100%;
-        text-align: center;
     }
 
-    h1 {
-        font-size: 2.5rem;
-        color: #007bff;
+    h1, h2 {
+        font-size: 36px;
+        font-weight: bolder;
+        color: #a5a5a5;
         margin-bottom: 1rem;
+        text-shadow: 0 8px 6px rgba(0, 0, 0, 0.3);
     }
 
-    .image-container {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .animated-image {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        animation: spin 4s infinite linear, bounce 2s infinite alternate;
-    }
-
-    .animated-image:hover {
-        transform: scale(1.05) rotate(10deg);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .animated-image:active {
-        transform: scale(0.95) rotate(-10deg);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    @keyframes spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-
-    @keyframes bounce {
-        from { transform: translateY(0); }
-        to { transform: translateY(-20px); }
-    }
-
-    .team-section {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 2rem;
-    }
-
-    .team-card {
-        background: white;
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 30%;
+    .card {
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
-
-    .team-card:hover {
+    .card:hover {
         transform: scale(1.05);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
-
-    .team-image {
+    .card-nts-m {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .card-img-top-nts {
         width: 100%;
-        border-radius: 50%;
-        margin-bottom: 1rem;
+        height: auto;
+        border-radius: 3px;
+    }
+    .card-img-top {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
     }
 
-    .team-card h3 {
-        margin: 0;
-        color: #007bff;
+    .card-title {
+        margin: 1rem 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: #a5a5a5;
+        font-size: 1.5rem;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     }
 
-    .team-card p {
+    .card-text {
         margin: 0.5rem 0;
         color: #555;
+    }
+
+    p {
+        font-size: 1.1rem;
     }
 </style>
 @endsection

@@ -7,7 +7,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" >
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
@@ -338,6 +338,49 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+
+    /* Estilo para el botón flotante tipo barra de búsqueda */
+        .floating-search-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff; /* Color primario */
+            color: white;
+            padding: 10px 30px;
+            border-radius: 30px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Espacio entre el icono y el texto */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Transiciones */
+            z-index: 1000;
+            animation: zoomPulse 2s infinite; /* Animación de zoom constante */
+        }
+
+        .floating-search-btn:hover {
+            text-decoration: none;
+            transform: transition(3s);
+            background-color: #0d291c; /* Color al pasar el mouse */
+            box-shadow: 0 8px 16px rgb(1000, 1000, 1000, 0.2); /* Sombra más prominente al pasar el mouse */
+            transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+            color: white; /* Asegurarse de que el texto y el icono sigan siendo blancos */
+        }
+
+        /* Animación de zoom constante */
+        @keyframes zoomPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1); /* Zoom al 110% en el medio de la animación */
+            }
+        }
+
+
     </style>
 </head>
 <body>
@@ -372,7 +415,7 @@
                     <a class="nav-link" href="{{ url('/contactanos') }}">Contactanos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ayudanos a mejorar <i class="fa-regular fa-envelope"></i></a>
+                    <a class="nav-link" href="{{ url('https://forms.gle/NgrDHqAhek8goGGD9') }}">Ayudanos a mejorar <i class="fa-regular fa-envelope"></i></a>
                 </li>
             </ul>
         </div>

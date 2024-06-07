@@ -8,19 +8,18 @@ use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/biblioteca', [PlantController::class, 'search'])->name('biblioteca');
-Route::get('/buscar', [SearchController::class, 'search'])->name('search');
-// Ruta para el buscador
-Route::get('/search', [PlantController::class, 'search'])->name('plants.search');
+
+// Ruta de biblioteca
+Route::get('/biblioteca', function () {
+    return view('biblioteca');
+});
+
+
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 // Ruta de bienvenida
 Route::get('/', function () {
     return view('welcome');
-});
-// Ruta de biblioteca
-Route::get('/biblioteca', function () {
-    return view('biblioteca');
 });
 
 // Ruta para la página de contáctanos
@@ -41,13 +40,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Rutas para las plantas
 Route::middleware('auth')->group(function () {
-
     // Ruta de configuracion
     Route::get('/configuracion', [ConfigController::class, 'index'])->name('config.index');
     Route::post('/configuracion', [ConfigController::class, 'update'])->name('config.update');
+
     // Rutas de registro protegida para el usuario
     Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register');
     Route::post('/register', [UserController::class, 'register']);
+
     // Ruta protegida del dashboard de plantas
     Route::get('/plants', [PlantController::class, 'index'])->name('plants.index');
     Route::get('/plants/create', [PlantController::class, 'create'])->name('plants.create');
