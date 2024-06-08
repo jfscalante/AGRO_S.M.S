@@ -14,6 +14,8 @@ Route::get('/biblioteca', function () {
     return view('biblioteca');
 });
 
+// mostrar detalles de la planta de las card
+Route::get('/plants/{id}', [PlantController::class, 'show'])->name('plants.plant-details');
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 

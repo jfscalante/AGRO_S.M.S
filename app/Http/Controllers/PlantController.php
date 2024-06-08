@@ -25,6 +25,7 @@ class PlantController extends Controller
     {
         $plant = Plant::findOrFail($id);
         return view('plants.show', compact('plant'));
+        // return view('plants.plant-details', compact('plant'));
     }
 
     // Mostrar el formulario para crear una nueva planta
@@ -118,9 +119,9 @@ class PlantController extends Controller
     }
 
     // Mostrar detalles de la planta para el modal
-    public function showDetails($id)
-    {
-        $plant = Plant::findOrFail($id);
-        return view('plants.partials.details', compact('plant'));
-    }
+        public function showDetails($id)
+        {
+            $plant = Plant::findOrFail($id);
+            return view('plants.plant-details', compact('plant'));
+        }
 }
