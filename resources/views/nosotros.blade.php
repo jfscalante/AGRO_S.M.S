@@ -6,7 +6,7 @@
     <div class="row mb-5">
         <div class="col-md-6">
             <h2 class="mb-3">¿A qué nos dedicamos?</h2>
-            <p>Somos unos estudiantes con ganas de dar soluciones a campesinos teniendo en cuenta las dificultades a la hora de buscar ayuda y no encontrar fácilmente soluciones.</p>
+            <p>Somos aprendices con ganas de dar soluciones a campesinos teniendo en cuenta las dificultades a la hora de buscar ayuda y no encontrar fácilmente soluciones.</p>
         </div>
         <div class="col-md-6">
             <img src="images/nosotros (5).png" alt="A qué nos dedicamos" class="img-fluid rounded">
@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-6">
             <h2 class="mb-3">¿Quiénes somos?</h2>
-            <p>Somos unos estudiantes capaces de brindar soluciones desarrollando software para ayudar a todas esas personas a tener una mejor articulación a sus problemas.</p>
+            <p>Somos unos aprendices capaces de brindar soluciones desarrollando software para ayudar a todas esas personas a tener una mejor articulación a sus problemas.</p>
         </div>
     </div>
 
@@ -40,7 +40,7 @@
                 <img src="images/nosotros (1).png" alt="Visión" class="card-img-top-nts">
                 <div class="card-body">
                     <h4 class="card-title">Visión</h4>
-                    <p class="card-text">Ser una web que genere ayuda a muchos pequeños del país o el mundo en general y poder brindar soluciones a los agricultores facilitando el mantenimiento de cultivos.</p>
+                    <p class="card-text">Ser una web que genere ayuda a muchos del país o el mundo en general y poder brindar soluciones a los agricultores facilitando el mantenimiento de cultivos.</p>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                 <img src="images/scalante.png" alt="Fabian Scalante" class="card-img-top">
                 <div class="card-body">
                     <h4 class="card-title">Fabian Scalante</h4>
-                    <p class="card-text">Desarrollador Full Stack<br>Experto en Laravel y Vue.js</p>
+                    <p class="card-text">Desarrollador Full Stack<br>Experto en Laravel y Mysql</p>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
                 <img src="images/fajardo.png" alt="Miguel Suarez" class="card-img-top">
                 <div class="card-body">
                     <h4 class="card-title">Miguel Suarez</h4>
-                    <p class="card-text">Desarrollador Full Stack<br>Experto en Laravel y Node.js</p>
+                    <p class="card-text">Desarrollador Full Stack<br>Experto en Laravel, Bootstrap y Mysql</p>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
                 <img src="images/monroy.png" alt="Duvan Monroy" class="card-img-top">
                 <div class="card-body">
                     <h4 class="card-title">Duvan Monroy</h4>
-                    <p class="card-text">Desarrollador Backend<br>Experto en Node.js y Mysql</p>
+                    <p class="card-text">Desarrollador Full Stack<br>Experto en Laravel y Mysql</p>
                 </div>
             </div>
         </div>

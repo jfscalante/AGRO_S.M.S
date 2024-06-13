@@ -7,7 +7,7 @@ body {
 }
 
 .bg-color {
-    background-image: url('/images/perla.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('images/fondo.jpg');
     background-size: cover;
     background-attachment: fixed;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);

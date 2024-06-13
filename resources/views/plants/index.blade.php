@@ -15,10 +15,10 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Enfermedad</th>
-                    <th>Descripción</th>
+                    <!-- <th>Descripción</th> -->
                     <th>Tratamiento Químico</th>
-                    <th>Cantidad de Tratamiento</th>
-                    <th>Medidas Preventivas</th>
+                    <!-- <th>Cantidad de Tratamiento</th>
+                    <th>Medidas Preventivas</th> -->
                     <th>Imagen</th>
                     <th>Acciones</th>
                 </tr>
@@ -29,13 +29,13 @@
                         <td>{{ $plant->id }}</td>
                         <td>{{ $plant->name }}</td>
                         <td>{{ $plant->disease_name }}</td>
-                        <td>{{ $plant->description }}</td>
+                        <!-- <td>{{ $plant->description }}</td> -->
                         <td>{{ $plant->chemical_treatment }}</td>
-                        <td>{{ $plant->treatment_quantity }}</td>
-                        <td>{{ $plant->preventive_measures }}</td>
+                        <!-- <td>{{ $plant->treatment_quantity }}</td>
+                        <td>{{ $plant->preventive_measures }}</td> -->
                         <td>
                             @if ($plant->image)
-                                <img src="{{ asset('images/' . $plant->image) }}" alt="{{ $plant->name }}" class="img-thumbnail">
+                                <img src="{{ asset('images/' . $plant->image) }}" alt="{{ $plant->name }}" class="img-thumbnail" style="width: 300px;">
                             @else
                                 Sin imagen
                             @endif

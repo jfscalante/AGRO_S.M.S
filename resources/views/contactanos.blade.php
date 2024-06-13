@@ -5,7 +5,7 @@
     <div class="contacto-contenedor">
         <div class="contacto-texto">
             <h2>Contáctanos</h2>
-            <p>¿Necesitas ponerte en contacto con nosotros? Completa el formulario con tu consulta o encuentra el <a href="mailto:department@example.com">correo electrónico</a> del departamento que deseas contactar a continuación.</p>
+            <p>¿Necesitas ponerte en contacto con nosotros?</p>
         </div>
 
         <div class="contacto-formulario">
@@ -34,8 +34,8 @@
 
     <div class="informacion-seccion">
         <h3>Nuestra Ubicacion</h3>
-        <p>Calle Ejemplo 1234, Ciudad, Estado, 12345</p>
-        <p>Email: contacto@tuempresa.com | Teléfono: (123) 456-7890</p>
+        <p>Cra. 10 #10-45 a 10-3, Garzón, Huila</p>
+        <p>Email: Agrosms@gmail.com.com | Teléfono: +52 3229117686</p>
     </div>
 
     <div class="mapa-contenedor">
@@ -106,7 +106,7 @@
     .contacto-texto h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
-        color: #4A90E2;
+        color: #34520d;
     }
 
     .contacto-texto p {
@@ -133,8 +133,8 @@
 
     .contacto-formulario input:focus,
     .contacto-formulario textarea:focus {
-        border-color: #4A90E2;
-        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        border-color: #34520d;
+        box-shadow: 0 0 5px rgb(52, 82, 13, 0.3);
     }
 
     .contacto-formulario .etiqueta-formulario {
@@ -154,7 +154,7 @@
         top: -1rem;
         left: 0.75rem;
         font-size: 0.75rem;
-        color: #4A90E2;
+        color: rgb(52, 82, 13);
         background: #fff;
         padding: 0 0.25rem;
     }
@@ -162,7 +162,7 @@
     .btn-enviar {
         display: inline-block;
         padding: 0.75rem 1.5rem;
-        background-color: #4A90E2;
+        background-color: rgb(52, 82, 13);
         color: white;
         border: none;
         border-radius: 4px;
@@ -173,7 +173,7 @@
     }
 
     .btn-enviar:hover {
-        background-color: #357ABD;
+        background-color: rgb(52, 82, 13);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 

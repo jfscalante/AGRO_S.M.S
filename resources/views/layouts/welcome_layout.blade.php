@@ -415,7 +415,10 @@
                     <a class="nav-link" href="{{ url('/contactanos') }}">Contactanos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('https://forms.gle/NgrDHqAhek8goGGD9') }}">Ayudanos a mejorar <i class="fa-regular fa-envelope"></i></a>
+                    <a class="nav-link" href="{{ url('https://forms.gle/NgrDHqAhek8goGGD9') }}" target="_blank">Ayudanos a mejorar <i class="fa-regular fa-envelope"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bg bg-success rounded" href="{{ url('/login') }}">Login</a>
                 </li>
             </ul>
         </div>

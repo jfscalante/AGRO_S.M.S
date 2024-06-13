@@ -15,7 +15,7 @@ body {
 
 .card-header {
     border-radius: 10px 10px 0 0;
-    background-image: url('/images/perla.png'); /* Asegúrate de que la imagen exista */
+    background-image: url('/images/fondo.jpg'); /* Asegúrate de que la imagen exista */
     background-size: cover;
     color: white;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);

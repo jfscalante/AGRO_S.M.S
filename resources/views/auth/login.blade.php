@@ -5,8 +5,10 @@
 @section('content')
 <style>
   body {
-    background-image: url(images/blanco.jpg);
     font-family: Arial, sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.691)), url('images/fondo.jpg');
+    background-size: cover;
+    background-position: center;
   }
 
   .container {
@@ -33,9 +35,9 @@
     padding: 40px;
     margin: 20px auto;
     transform: translate(-50%, -55%);
-    background: rgba(0,0,0,.9);
+    background: rgb(252, 242, 255, 0.2);
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    box-shadow: 0 15px 25px rgb(252, 242, 255, 0.2);
     border-radius: 10px;
   }
 
@@ -91,7 +93,7 @@
     display: block;
     padding: 10px 20px;
     font-weight: bold;
-    color: rgba(241,231,103,1);
+    color: white;
     font-size: 13px;
     text-decoration: none;
     text-transform: uppercase;
@@ -106,7 +108,7 @@
 
   .boton:hover {
     background: #fff;
-    color: rgba(241,231,103,1);
+    color: rgb(76, 120, 19);
     border-radius: 5px;
   }
 
@@ -120,7 +122,7 @@
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(241,231,103,1));
+    background: linear-gradient(90deg, transparent, rgb(76, 120, 19));
     animation: btn-anim1 1.5s linear infinite;
   }
 
@@ -139,7 +141,7 @@
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, rgba(241,231,103,1));
+    background: linear-gradient(180deg, transparent, rgb(76, 120, 19));
     animation: btn-anim2 1.5s linear infinite;
     animation-delay: .375s;
   }
@@ -159,7 +161,7 @@
     right: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent, rgba(241,231,103,1));
+    background: linear-gradient(270deg, transparent, rgb(76, 120, 19));
     animation: btn-anim3 1.5s linear infinite;
     animation-delay: .75s;
   }
@@ -179,7 +181,7 @@
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, rgba(241,231,103,1));
+    background: linear-gradient(360deg, transparent, rgb(76, 120, 19));
     animation: btn-anim4 1.5s linear infinite;
     animation-delay: 1.125s;
   }
