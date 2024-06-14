@@ -9,14 +9,21 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 
 
+// ruta que contiene el acceso a el creado de plantas 
+Route::resource('plants', PlantController::class);
+
 // Ruta de biblioteca
 Route::get('/biblioteca', function () {
     return view('biblioteca');
 });
 
 // mostrar detalles de la planta de las card
-Route::get('/plants/{id}', [PlantController::class, 'show'])->name('plants.plant-details');
 
+Route::get('/search/autocomplete', [SearchController::class, 'autocomplete'])->name('search.autocomplete');
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/search/popular', [SearchController::class, 'popular'])->name('search.popular');
+Route::get('/plant/details/{id}', [PlantController::class, 'details'])->name('plant.details');
+Route::get('/plant/details/{id}', [PlantController::class, 'showDetails'])->name('plant.details');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 // Ruta de bienvenida
@@ -40,6 +47,7 @@ Route::get('/nosotros', function () {
 // Ruta protegida para la página principal
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 
+
 // Rutas para las plantas
 Route::middleware('auth')->group(function () {
     // Ruta de configuracion
@@ -50,18 +58,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register');
     Route::post('/register', [UserController::class, 'register']);
 
-    // Ruta protegida del dashboard de plantas
-    Route::get('/plants', [PlantController::class, 'index'])->name('plants.index');
-    Route::get('/plants/create', [PlantController::class, 'create'])->name('plants.create');
-    Route::post('/plants', [PlantController::class, 'store'])->name('plants.store');
-    Route::get('/plants/{id}', [PlantController::class, 'show'])->name('plants.show');
-    Route::get('/plants/{id}/edit', [PlantController::class, 'edit'])->name('plants.edit');
-    Route::put('/plants/{id}', [PlantController::class, 'update'])->name('plants.update');
-    Route::delete('/plants/{id}', [PlantController::class, 'destroy'])->name('plants.destroy');
-    Route::post('/filter', [PlantController::class, 'filterByDisease'])->name('plants.filterByDisease');
-    Route::get('/plants/filterByDisease', [PlantController::class, 'filterByDisease'])->name('plants.filterByDisease');
-    Route::get('/filter', [PlantController::class, 'showFilterForm'])->name('filter.form');
-    Route::get('/plants/search', [PlantController::class, 'search'])->name('plants.search');
+   // Ruta protegida del dashboard de plantas
+   
+   Route::get('/plants', [PlantController::class, 'index'])->name('plants.index');
+   Route::get('/plants/create', [PlantController::class, 'create'])->name('plants.create');
+   Route::post('/plants', [PlantController::class, 'store'])->name('plants.store'); // Ruta para almacenar la planta
+   Route::get('/plants/{id}', [PlantController::class, 'show'])->name('plants.show');
+   Route::get('/plants/{id}/edit', [PlantController::class, 'edit'])->name('plants.edit');
+   Route::put('/plants/{id}', [PlantController::class, 'update'])->name('plants.update');
+   Route::delete('/plants/{id}', [PlantController::class, 'destroy'])->name('plants.destroy');
+   Route::post('/filter', [PlantController::class, 'filterByDisease'])->name('plants.filterByDisease');
+   Route::get('/plants/filterByDisease', [PlantController::class, 'filterByDisease'])->name('plants.filterByDisease');
+   Route::get('/filter', [PlantController::class, 'showFilterForm'])->name('filter.form');
+   Route::get('/plants/search', [PlantController::class, 'search'])->name('plants.search');
 });
 
 // Rutas para la autenticación de usuarios

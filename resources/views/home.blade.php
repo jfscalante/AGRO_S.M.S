@@ -7,7 +7,8 @@ body {
 }
 
 .bg-color {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('images/fondo.jpg');
+/* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('images/fondo.jpg');     */
+    background: #28a745;
     background-size: cover;
     background-attachment: fixed;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
@@ -72,7 +73,7 @@ body {
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card shadow-sm mb-4">
-                <div class="card-header bg-color text-white text-center">
+                <div class="card-header bg bg-success bg-color text-white text-center">
                     <h3 class="mb-0 shadow-md ">{{ __('Panel de Control') }}</h3>
                 </div>
 
@@ -91,7 +92,7 @@ body {
 
             <!-- Acciones Rápidas -->
             <div class="card shadow-sm mb-4">
-                <div class="card-header bg-color text-white text-center">
+                <div class="card-header bg bg-success bg-color text-white text-center">
                     <h4 class="mb-0">{{ __('Acciones Rápidas') }}</h4>
                 </div>
                 <div class="card-body">

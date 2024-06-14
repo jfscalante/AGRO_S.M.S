@@ -15,7 +15,7 @@ body {
 
 .card-header {
     border-radius: 10px 10px 0 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('images/fondo.jpg');
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('images/fondo.jpg'); */
     background-size: cover;
     color: white;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
@@ -110,7 +110,7 @@ legend {
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow-lg border-0 rounded-lg">
-                <div class="card-header text-white text-center">
+                <div class="card-header text-white text-center bg bg-success">
                     <h3 class="my-3">{{ __('Agregar Nueva Planta') }}</h3>
                 </div>
                 <div class="card-body">
