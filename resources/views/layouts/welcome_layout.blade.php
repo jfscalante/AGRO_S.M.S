@@ -13,6 +13,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
+    @livewireStyles
     <!-- Custom CSS -->
     <style>
         /* Importación de fuentes */
@@ -428,6 +429,8 @@
         @yield('content')
     </div>
 
+    @livewireScripts
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -448,5 +451,7 @@
             setTimeout(hideLoader, 200); // Esconde el loader después de 2 segundos
         });
     </script>
+
+    
 </body>
 </html>

@@ -1,8 +1,10 @@
 @extends('layouts.welcome_layout')
 
-<div class="content">
-    <img src="images/banner_biblioteca.png" alt="">
-</div>
+    <!-- Imagen de banner -->
+    <div class="content">
+        <img src="{{ asset('images/banner_biblioteca.png') }}" alt="Banner Biblioteca">
+    </div>
+    
 @section('content')
 <style>
     /* Imagen de banner */
@@ -21,6 +23,7 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s;
         color: #23262e;
+        background-color: #fff;
     }
 
     .plant-card:hover {
@@ -30,12 +33,15 @@
     .plant-card img {
         max-width: 100%;
         border-radius: 5px;
+        height: 200px;
+        object-fit: cover;
     }
 
     .plant-card h3 {
         margin-top: 10px;
         margin-bottom: 10px;
         color: #23262e;
+        font-size: 1.25em;
     }
 
     .plant-card p {
@@ -43,10 +49,32 @@
         color: #23262e;
     }
 
+    .search-info {
+        margin-bottom: 20px;
+        font-size: 1.1em;
+        color: #555;
+    }
+
+    .input-group-append button {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .input-group-append button:hover {
+        background-color: #218838;
+    }
 </style>
 
 <div class="container">
-    <h1>Bienvenido</h1>
+
+
+
+    <h1>Biblioteca de Plantas</h1>
+
+    <!-- Información sobre el buscador -->
+    <div class="search-info">
+        Utiliza el buscador para encontrar información sobre diferentes plantas y las enfermedades que las afectan. Puedes buscar por el nombre de la planta o por el nombre de la enfermedad.
+    </div>
 
     <!-- Formulario de búsqueda -->
     <form action="{{ route('search') }}" method="GET" class="mb-4">
@@ -60,7 +88,7 @@
 
     <!-- Resultados de la búsqueda -->
     @if(isset($plants))
-        <h2>Resultados de la búsqueda para "{{ $query }}"</h2>
+        <h2>{{ isset($query) ? "Resultados de la búsqueda para \"$query\"" : "Todas las Plantas" }}</h2>
         @if($plants->isEmpty())
             <p>No se encontraron resultados.</p>
         @else
@@ -68,11 +96,11 @@
                 @foreach($plants as $plant)
                     <div class="col-md-4">
                         <div class="plant-card">
-                            <a href="{{ route('plants.show', $plant->id) }}">
+                            <a href="{{ route('plants.details', $plant->id) }}">
                                 @if ($plant->image)
                                     <img src="{{ asset('images/' . $plant->image) }}" alt="{{ $plant->name }}">
                                 @else
-                                    <img src="images/default-plant.jpg" alt="{{ $plant->name }}">
+                                    <img src="{{ asset('images/default-plant.jpg') }}" alt="{{ $plant->name }}">
                                 @endif
                                 <h3>{{ $plant->name }}</h3>
                                 <p><strong>Nombre de la Enfermedad:</strong> {{ $plant->disease_name }}</p>

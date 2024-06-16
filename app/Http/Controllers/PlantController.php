@@ -10,7 +10,8 @@ class PlantController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['details']);
+        // $this->middleware('auth');
     }
 
     // Listar todas las plantas
@@ -114,14 +115,29 @@ class PlantController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('query');
-        $plants = Plant::where('name', 'like', "%$query%")->get();
-        return view('plants.index', ['plants' => $plants, 'query' => $query]);
+    
+        if ($query) {
+            $plants = Plant::where('name', 'LIKE', "%{$query}%")
+                           ->orWhere('disease_name', 'LIKE', "%{$query}%")
+                           ->get();
+        } else {
+            $plants = Plant::all();
+        }
+    
+        return view('plants.index', compact('plants', 'query'));
+    }
+    
+    // Mostrar detalles de la planta nuevo
+    public function details($id)
+    {
+        $plant = Plant::findOrFail($id);
+        return view('plants.details', compact('plant'));
     }
 
-    // Mostrar detalles de la planta para el modal
-        public function showDetails($id)
+    // Mostrar los detalles de cada planta 
+        public function searchShow($id)
         {
             $plant = Plant::findOrFail($id);
-            return view('plants.plant-details', compact('plant'));
+            return view('plants.show', compact('plant'));
         }
 }

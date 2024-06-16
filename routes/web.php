@@ -9,6 +9,10 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 
 
+// Ver detalles de cada planta
+Route::get('/plants/search/{id}', [PlantController::class, 'searchShow'])->name('plants.searchShow');
+
+
 // ruta que contiene el acceso a el creado de plantas 
 Route::resource('plants', PlantController::class);
 
@@ -18,12 +22,14 @@ Route::get('/biblioteca', function () {
 });
 
 // mostrar detalles de la planta de las card
+Route::get('/plants/{id}/details', [PlantController::class, 'details'])->name('plants.details');
+
+Route::get('/search_show', [PlantController::class, 'searchShow'])->name('plants.search_show');
 
 Route::get('/search/autocomplete', [SearchController::class, 'autocomplete'])->name('search.autocomplete');
-Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::get('/search/popular', [SearchController::class, 'popular'])->name('search.popular');
-Route::get('/plant/details/{id}', [PlantController::class, 'details'])->name('plant.details');
-Route::get('/plant/details/{id}', [PlantController::class, 'showDetails'])->name('plant.details');
+// Route::get('/plant/details/{id}', [PlantController::class, 'details'])->name('plant.details');
+// Route::get('/plant/details/{id}', [PlantController::class, 'showDetails'])->name('plant.details');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 // Ruta de bienvenida
