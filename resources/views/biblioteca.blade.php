@@ -104,7 +104,7 @@
                                 @endif
                                 <h3>{{ $plant->name }}</h3>
                                 <p><strong>Nombre de la Enfermedad:</strong> {{ $plant->disease_name }}</p>
-                                <p><strong>Descripción:</strong> {{ Str::limit($plant->description, 100) }}</p>
+                                <!-- <p><strong>Descripción:</strong> {{ Str::limit($plant->description, 100) }}</p> -->
                             </a>
                         </div>
                     </div>
