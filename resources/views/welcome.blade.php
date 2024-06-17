@@ -37,9 +37,9 @@
         <!-- Iconos de Redes Sociales -->
          <p>Apoyanos en nustras Redes Sociales: </p>
         <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.facebook.com/duvan.monrroybermudez?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/fabian_scalante?igsh=NTc4MTIwNjQ2YQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/Miguela59090296" target="_blank"><i class="fa-brands fa-twitter"></i></a>
         </div>
     </div>
 </section>

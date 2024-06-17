@@ -35,7 +35,7 @@
     <div class="informacion-seccion">
         <h3>Nuestra Ubicacion</h3>
         <p>Cra. 10 #10-45 a 10-3, Garzón, Huila</p>
-        <p>Email: Agrosms@gmail.com.com | Teléfono: +52 3229117686</p>
+        <p>Email: Agrosms2617502@gmail.com. | Teléfono: +52 3229117686</p>
     </div>
 
     <div class="mapa-contenedor">

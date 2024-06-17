@@ -19,7 +19,7 @@
         border: 1px solid #ddd;
         border-radius: 5px;
         margin-bottom: 20px;
-        padding: 15px;
+        padding: 0;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s;
         color: #23262e;
@@ -31,10 +31,15 @@
     }
 
     .plant-card img {
-        max-width: 100%;
-        border-radius: 5px;
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         height: 200px;
         object-fit: cover;
+    }
+
+    .plant-card .card-content {
+        padding: 15px;
     }
 
     .plant-card h3 {
@@ -47,6 +52,16 @@
     .plant-card p {
         margin: 5px 0;
         color: #23262e;
+    }
+
+    .plant-card a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .plant-card a:hover {
+        text-decoration: none;
+        color: inherit;
     }
 
     .search-info {
@@ -63,12 +78,28 @@
     .input-group-append button:hover {
         background-color: #218838;
     }
+
+    .icon-container {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+    }
+
+    .icon-container i {
+        margin-right: 10px;
+        color: #28a745;
+    }
+
+    .icon-container p {
+        margin: 0;
+        color: #23262e;
+    }
 </style>
 
+<!-- Include Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <div class="container">
-
-
-
     <h1>Biblioteca de Plantas</h1>
 
     <!-- Información sobre el buscador -->
@@ -102,9 +133,24 @@
                                 @else
                                     <img src="{{ asset('images/default-plant.jpg') }}" alt="{{ $plant->name }}">
                                 @endif
-                                <h3>{{ $plant->name }}</h3>
-                                <p><strong>Nombre de la Enfermedad:</strong> {{ $plant->disease_name }}</p>
-                                <!-- <p><strong>Descripción:</strong> {{ Str::limit($plant->description, 100) }}</p> -->
+                                <div class="card-content">
+                                    <div class="icon-container">
+                                        <i class="fas fa-seedling"></i>
+                                        <h3>{{ $plant->name }}</h3>
+                                    </div>
+                                    <div class="icon-container">
+                                        <i class="fas fa-virus"></i>
+                                        <p><strong>Nombre de la Enfermedad:</strong> {{ $plant->disease_name }}</p>
+                                    </div>
+                                    <!-- <div class="icon-container">
+                                        <i class="fas fa-bug"></i>
+                                        <p>{{ $plant->disease_type }}</p>
+                                    </div> -->
+                                    <!-- <div class="icon-container">
+                                        <i class="fas fa-leaf"></i>
+                                        <p>{{ $plant->type }}</p>
+                                    </div> -->
+                                </div>
                             </a>
                         </div>
                     </div>
